@@ -8,7 +8,7 @@ GUILDWARS2_URL = 'https://api.guildwars2.com/v2/'
 
 class Pywars(API.API_Requests):
 
-    def __init__(self, api_key): # constructor
+    def __init__(self, api_key):
         super().__init__(api_key, GUILDWARS2_URL)
     
     def get_account_info(self):
@@ -18,6 +18,21 @@ class Pywars(API.API_Requests):
             return API_Models.Account(response)
         else:
             return None
+
+    def get_account_achievements(self):
+        response = self._get_request('/account/achievements')
+        print(response)
+
+        if response is not None:
+            return API_Models.Achievements(response)
+        else:
+            return None
+
+    def get_account_bank(self):
+        pass
+    
+    def get_account_dungeons(self):
+        pass
     
     def get_guild_name(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
