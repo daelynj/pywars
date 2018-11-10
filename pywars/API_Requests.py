@@ -3,6 +3,8 @@ import requests
 
 import pywars
 
+GUILDWARS2_URL = 'https://api.guildwars2.com/v2/'
+
 class API_Requests:
     def __init__(self, api_key):
         self.api_key = api_key
@@ -11,7 +13,7 @@ class API_Requests:
         pass
     
     def get_account_info():
-
+        pass
 
 
 
