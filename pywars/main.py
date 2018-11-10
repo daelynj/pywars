@@ -7,11 +7,14 @@ def main():
 
     client = pywars.Pywars(api_key)
     account = client.get_account_info()
-
+    guild = client.get_guild_name(account.guild_ID[0])
+    print(str(guild))
+    #guild_name = client.get_guild_name(account.guild_ID)
+"""
     if (account is None):
         print("error")
     else:
-        print(str(account))
+        print(str(guild_name))"""
 
 if __name__ == "__main__":
     main()

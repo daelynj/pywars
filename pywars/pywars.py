@@ -18,3 +18,11 @@ class Pywars(API.API_Requests):
             return API_Models.Account(response)
         else:
             return None
+    
+    def get_guild_name(self, guild_ID):
+        response = self._get_request('/guild/{0}'.format(guild_ID))
+
+        if response is not None:
+            return API_Models.Guild(response)
+        else:
+            return None
