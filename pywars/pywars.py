@@ -1,14 +1,20 @@
-import json
-import requests
+import API_Requests as API
+import API_Models
 
-from pywars.API_Requests import API_Requests
+#this is the client
+#you generate a client, holds authorization like api_key..
 
-#https://wiki.guildwars2.com/wiki/API:Main
+GUILDWARS2_URL = 'https://api.guildwars2.com/v2/'
 
-#api_key = '106CFA85-D732-4441-9916-DAC84D48B1C893FBF40E-3078-4AF2-91F7-54ABE7721755'
+class Pywars(API.API_Requests):
 
-class Pywars:
+    def __init__(self, api_key): # constructor
+        super().__init__(api_key, GUILDWARS2_URL)
     
-    def __init__(self, api_key):
-        self.api_key = api_key
+    def get_account_info(self):
+        response = self._get_request('/account')
 
+        if response is not None:
+            return API_Models.Account(response)
+        else:
+            return None
