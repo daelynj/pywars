@@ -1,9 +1,11 @@
 import pywars
+import json
 
 #https://wiki.guildwars2.com/wiki/API:Main
 
 def main():
-    api_key = '106CFA85-D732-4441-9916-DAC84D48B1C893FBF40E-3078-4AF2-91F7-54ABE7721755'
+    with open('credentials.json') as f:
+        api_key = json.load(f)['api-key']
 
     client = pywars.Pywars(api_key)
 
