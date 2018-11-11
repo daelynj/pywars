@@ -10,10 +10,10 @@ def main():
     account = client.get_account_info()
 
     guild = client.get_guild_name(account.guild_IDS[0])
-    
+
     achievements = client.get_account_achievements()
 
-   """ if (account is None):
+    """ if (account is None):
         print("error")
     else:
         print(str(guild))"""
