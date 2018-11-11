@@ -21,7 +21,6 @@ class Pywars(API.API_Requests):
 
     def get_account_achievements(self):
         response = self._get_request('/account/achievements')
-        print(response)
 
         if response is not None:
             return API_Models.Achievements(response)
@@ -29,10 +28,21 @@ class Pywars(API.API_Requests):
             return None
 
     def get_account_bank(self):
-        pass
-    
+        response = self._get_request('/account/bank')
+
+        if response is not None:
+            return API_Models.Bank(response)
+        else:
+            return None
+
     def get_account_dungeons(self):
-        pass
+        response = self._get_request('/account/dungeonss')
+
+        if response is not None:
+            return API_Models.Dungeons(response)
+        else:
+            return None
+
     
     def get_guild_name(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))

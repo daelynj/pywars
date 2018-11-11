@@ -25,13 +25,13 @@ class Account:
 
 class Achievements:
     def __init__(self, json):
-        pass
+        pass                               #need to do something about the massive list of achievements that gets delivered, perhaps making a list of Achievements objects
     def __str__(self):
         pass
 
 class Bank:
     def __init__(self, json):
-        pass
+        pass                               #similar to Achievements, need to do something about the massive list of items that gets delivered
     def __str__(self):
         pass
 
