@@ -14,7 +14,9 @@ def main():
     guild = client.get_guild_name(account.guild_IDS[0])
 
     achievements = client.get_account_achievements()
-    print(achievements[1])
+    
+    for i in range(0, len(achievements)):
+        print(str(achievements[i]), "\n")
 
     """ if (account is None):
         print("error")
