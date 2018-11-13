@@ -1,5 +1,6 @@
 import API_Requests as API
 import API_Models
+import json
 
 #this is the client
 #you generate a client, holds authorization like api_key..
@@ -20,10 +21,13 @@ class Pywars(API.API_Requests):
             return None
 
     def get_account_achievements(self):
+        achievement_list = []
         response = self._get_request('/account/achievements')
 
         if response is not None:
-            return API_Models.Achievements(response)
+            for achievements in response:
+                achievement_list.append(API_Models.Achievements(achievements))
+            return achievement_list
         else:
             return None
 
@@ -36,7 +40,7 @@ class Pywars(API.API_Requests):
             return None
 
     def get_account_dungeons(self):
-        response = self._get_request('/account/dungeonss')
+        response = self._get_request('/account/dungeons')
 
         if response is not None:
             return API_Models.Dungeons(response)

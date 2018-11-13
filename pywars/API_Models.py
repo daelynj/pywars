@@ -25,9 +25,9 @@ class Account:
 
 class Achievements:
     def __init__(self, json):
-        pass                               #need to do something about the massive list of achievements that gets delivered, perhaps making a list of Achievements objects
+        self.id = json['id']                             #need to do something about the massive list of achievements that gets delivered, perhaps making a list of Achievements objects
     def __str__(self):
-        pass
+        return "ID: {0}".format(self.id)
 
 class Bank:
     def __init__(self, json):
