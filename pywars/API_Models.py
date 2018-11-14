@@ -59,9 +59,37 @@ class Achievements:
 
 class Bank:
     def __init__(self, json):
-        pass                               #similar to Achievements, need to do something about the massive list of items that gets delivered
+        self.id = json['id']
+        self.count = json['count']                    #the endpoint can be filled with null values where bank slots are empty, I need to figure out a way to reference the null values in the response
+                                                      #something like if 'null' in json:
+        if 'charges' in json:
+            self.charges = json['charges']
+        else:
+            self.charges = None
+        if 'upgrades' in json:
+            self.upgrades = json['upgrades']
+        else:
+            self.upgrades = None
+        if 'skin' in json:
+            self.skin = json['skin']
+        else:
+            self.skin = None
+        if 'infusions' in json:
+            self.infusions = json['infusions']
+        else:
+            self.infusions = None
+        if 'binding' in json:
+            self.binding = json['binding']
+        else:
+            self.binding = None
+        if 'bound_to' in json:
+            self.bound_to = json['bound_to']
+        else:
+            self.bound_to = None
+
     def __str__(self):
-        pass
+        return "ID: {0}\nCount: {1}\nCharges: {2}\nUpgrades: {3}\nSkin: {4}\nInfusions: {5}\nBinding: {6}\nBound to: {7}".format(self.id, self.count, self.charges, self.upgrades, 
+                                                                                                                                self.skin, self.infusions, self.binding, self.bound_to)
 
 class Dungeons:
     def __init__(self, json):

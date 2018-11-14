@@ -21,21 +21,24 @@ class Pywars(API.API_Requests):
             return None
 
     def get_account_achievements(self):
-        achievement_list = []
+        achievements = []
         response = self._get_request('/account/achievements')
 
         if response is not None:
-            for achievements in response:
-                achievement_list.append(API_Models.Achievements(achievements))
-            return achievement_list
+            for achievement in response:
+                achievements.append(API_Models.Achievements(achievement))
+            return achievements
         else:
             return None
 
     def get_account_bank(self):
+        bank_items = []
         response = self._get_request('/account/bank')
-
+        
         if response is not None:
-            return API_Models.Bank(response)
+            for item in response:
+                bank_items.append(API_Models.Bank(item))
+            return bank_items
         else:
             return None
 

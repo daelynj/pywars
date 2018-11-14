@@ -8,15 +8,18 @@ def main():
         api_key = json.load(f)['api-key']
 
     client = pywars.Pywars(api_key)
+    #client2 = pywars.Pywars()                      #TODO
 
     account = client.get_account_info()
 
     guild = client.get_guild_name(account.guild_IDS[0])
 
     achievements = client.get_account_achievements()
+
+    bank = client.get_account_bank()
     
-    for i in range(0, len(achievements)):
-        print(str(achievements[i]), "\n")
+    for i in range(0, len(bank)):
+        print(str(bank[i]), "\n")
 
     """ if (account is None):
         print("error")
