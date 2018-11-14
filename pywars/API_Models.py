@@ -17,7 +17,7 @@ class Account:
         self.wvw_rank = json['wvw_rank']
     
     def __str__(self):
-        return "ID: {0}\nAge: {1}\nName: {2}\nWorld: {3}\nGuilds: {4}\nGuild Leaders: {5}\nCreated: {6}\nGuild Access: {7}\nCommander: {8}\nFractal Level: {9}\nDaily AP: {10}\nMonthly AP: {11}\nWvW Rank: {12}".format(
+        return "ID: {0}\nAge: {1}\nName: {2}\nWorld: {3}\nGuilds: {4}\nLeader(s) of: {5}\nCreated: {6}\nAccess: {7}\nCommander: {8}\nFractal Level: {9}\nDaily AP: {10}\nMonthly AP: {11}\nWvW Rank: {12}".format(
                                                                                                                                                                                 self.id, self.age, self.name, self.world, 
                                                                                                                                                                                 self.guild_IDS, self.guild_leaders, self.created, 
                                                                                                                                                                                 self.access_array, self.commander, self.fractal_level,
@@ -60,8 +60,8 @@ class Achievements:
 class Bank:
     def __init__(self, json):
         self.id = json['id']
-        self.count = json['count']                    #the endpoint can be filled with null values where bank slots are empty, I need to figure out a way to reference the null values in the response
-                                                      #something like if 'null' in json:
+        self.count = json['count']
+
         if 'charges' in json:
             self.charges = json['charges']
         else:

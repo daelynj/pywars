@@ -34,10 +34,13 @@ class Pywars(API.API_Requests):
     def get_account_bank(self):
         bank_items = []
         response = self._get_request('/account/bank')
-        
+
         if response is not None:
             for item in response:
-                bank_items.append(API_Models.Bank(item))
+                if item == None:
+                    bank_items.append("None")
+                else:
+                    bank_items.append(API_Models.Bank(item))
             return bank_items
         else:
             return None

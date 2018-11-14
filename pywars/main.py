@@ -17,9 +17,10 @@ def main():
     achievements = client.get_account_achievements()
 
     bank = client.get_account_bank()
+    print(account)
     
-    for i in range(0, len(bank)):
-        print(str(bank[i]), "\n")
+    #for i in range(0, len(guild)):
+     #   print(str(bank[i]), "\n")
 
     """ if (account is None):
         print("error")
