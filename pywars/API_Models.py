@@ -90,15 +90,19 @@ class Bank:
     def __str__(self):
         return "ID: {0}\nCount: {1}\nCharges: {2}\nUpgrades: {3}\nSkin: {4}\nInfusions: {5}\nBinding: {6}\nBound to: {7}".format(self.id, self.count, self.charges, self.upgrades, 
                                                                                                                                 self.skin, self.infusions, self.binding, self.bound_to)
-
-class Dungeons:
+                                                                                                                                
+class Dungeons_since_reset:
     def __init__(self, json):
-        pass
+        if len(json) is not 0:
+            self.dungeons = "\n".join(json)
+        else:
+            self.dungeons = None
+
     def __str__(self):
-        pass
-
-
-
+        if self.dungeons == None:
+            return "Dungeons done since reset: {0}".format(self.dungeons)
+        else:
+            return "Dungeons done since reset:\n{0}".format(self.dungeons)
 
 class Guild:
     def __init__(self, json):
@@ -111,9 +115,18 @@ class Guild:
         self.id = json['id']
         self.name = json['name']
         self.tag = json['tag']
-        #self.emblem
+        self.emblem = json['emblem']
+        self.emblem_background = json['emblem']['background']                               #everything from here and down in this function is just there for reference if needed, it will all be printed with
+        self.emblem_background_id = json['emblem']['background']['id']                      #self.emblem. OR you can print the emblem_background or emblem_foreground, OR the individual keys inside them
+        self.emblem_background_colors = json['emblem']['background']['colors']
+        self.emblem_foreground = json['emblem']['foreground']
+        self.emblem_foreground_id = json['emblem']['foreground']['id']
+        self.emblem_foreground_colors = json['emblem']['foreground']['colors']
+        self.emblem_flags = json['emblem']['flags']
 
     def __str__(self):
-        return "Level: {0}\nMotto: {1}\Influence: {2}\nAetherium: {3}\nResonance: {4}\nFavor: {5}\nID: {6}\nName: {7}\nTag: {8}".format(self.level, self.motd, self.influence, 
-                                                                                                                                        self.aetherium, self.resonance, self.favor,
-                                                                                                                                        self.id, self.name, self.tag)
+        return "Level: {0}\nMotto: {1}\Influence: {2}\nAetherium: {3}\nResonance: {4}\nFavor: {5}\nID: {6}\nName: {7}\nTag: {8}\nEmblem background: {9}\nEmblem foreground: {10}\nEmblem flags: {11}".format(
+                                                                                                                                                                    self.level, self.motd, self.influence, 
+                                                                                                                                                                    self.aetherium, self.resonance, self.favor,
+                                                                                                                                                                    self.id, self.name, self.tag, self.emblem_background,
+                                                                                                                                                                    self.emblem_foreground, self.emblem_flags)

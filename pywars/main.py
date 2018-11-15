@@ -17,10 +17,14 @@ def main():
     achievements = client.get_account_achievements()
 
     bank = client.get_account_bank()
-    print(account)
+
+    dungeons_since_reset = client.get_account_dungeons_since_reset()
     
-    #for i in range(0, len(guild)):
-     #   print(str(bank[i]), "\n")
+    #print(dungeons_since_reset)
+    #print(guild)
+    
+    #for i in range(0, len(bank)):
+    #   print(str(bank[i]), "\n")
 
     """ if (account is None):
         print("error")

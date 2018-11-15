@@ -45,11 +45,11 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_dungeons(self):
+    def get_account_dungeons_since_reset(self):
         response = self._get_request('/account/dungeons')
 
         if response is not None:
-            return API_Models.Dungeons(response)
+            return API_Models.Dungeons_since_reset(response)
         else:
             return None
 
