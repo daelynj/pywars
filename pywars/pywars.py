@@ -1,6 +1,5 @@
 import API_Requests as API
-from API_Models import API_Models
-from API_Models.account import Account
+import API_Models
 import json
 
 #this is the client
@@ -17,7 +16,7 @@ class Pywars(API.API_Requests):
         response = self._get_request('/account')
 
         if response is not None:
-            return Account(response)
+            return API_Models.Account(response)
         else:
             return None
 

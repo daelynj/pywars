@@ -14,14 +14,14 @@ def main():
 
     guild = client.get_guild_name(account.guild_IDS[0])
 
-    achievements = client.get_account_achievements()
+    #achievements = client.get_account_achievements()
 
-    bank = client.get_account_bank()
+    #bank = client.get_account_bank()
 
-    dungeons_since_reset = client.get_account_dungeons_since_reset()
+    #dungeons_since_reset = client.get_account_dungeons_since_reset()
     
     #print(dungeons_since_reset)
-    #print(guild)
+    print(guild)
     
     #for i in range(0, len(bank)):
     #   print(str(bank[i]), "\n")
