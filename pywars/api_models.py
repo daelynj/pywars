@@ -1,5 +1,10 @@
 import json
 
+class Achievements:
+    def __init__(self, json):
+        #implement achievements when no ID(s) are passed in (this class likely doesn't need specific implementation for that, but just making sure to remember)
+        pass
+
 class Account:
     def __init__(self, json):
         self.id = json['id']
@@ -23,7 +28,7 @@ class Account:
                                                                                                                                                                                 self.access_array, self.commander, self.fractal_level,
                                                                                                                                                                                 self.daily_ap, self.monthly_ap, self.wvw_rank)
 
-class Achievements:
+class Account_Achievements:
     def __init__(self, json):
         self.id = json['id']
         self.current = json['current']
@@ -125,7 +130,7 @@ class Guild:
         self.emblem_flags = json['emblem']['flags']
 
     def __str__(self):
-        return "Level: {0}\nMotto: {1}\Influence: {2}\nAetherium: {3}\nResonance: {4}\nFavor: {5}\nID: {6}\nName: {7}\nTag: {8}\nEmblem background: {9}\nEmblem foreground: {10}\nEmblem flags: {11}".format(
+        return "Level: {0}\nMotto: {1}\nInfluence: {2}\nAetherium: {3}\nResonance: {4}\nFavor: {5}\nID: {6}\nName: {7}\nTag: {8}\nEmblem background: {9}\nEmblem foreground: {10}\nEmblem flags: {11}".format(
                                                                                                                                                                     self.level, self.motd, self.influence, 
                                                                                                                                                                     self.aetherium, self.resonance, self.favor,
                                                                                                                                                                     self.id, self.name, self.tag, self.emblem_background,
