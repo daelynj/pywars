@@ -5,7 +5,7 @@ import json
 #this is the client
 #you generate a client, holds authorization like api_key..
 
-GUILDWARS2_URL = 'https://api.guildwars2.com/v2/'
+GUILDWARS2_URL = 'https://api.guildwars2.com/v2'
 
 class Pywars(API.API_Requests):
 
@@ -15,8 +15,16 @@ class Pywars(API.API_Requests):
     def get_achievements(self, ids=None):
         
         #TODO implement a different API call when ids are passed into get_achievements
-
-        response = self._get_request('/achievements')
+        if (ids == None):
+            response = self._get_request('/achievements')
+        else:
+            formatted_ids = ''
+            for id in ids:
+                if (id is not ids[-1]):
+                    formatted_ids += str(id) + ","                  #this if/else statement is only done so that the ids are formatted in such a way that a comma is not appended to the end of the last element
+                else:                                               #so [1, 5, 10] doesn't get formatted as 1,5,10, instead getting formatted as 1,5,10
+                    formatted_ids += str(id)
+            response = self._get_request('/achievements?ids=' + formatted_ids)
 
         if response is not None:
             return api_models.Achievements(response)
