@@ -14,10 +14,10 @@ class Pywars(API.API_Requests):
     
     def get_achievements(self, ids=None):
         achievements = []
-        
-        #TODO implement a different API call when ids are passed into get_achievements
+
         if (ids == None):
             response = self._get_request('/achievements')
+            return response                                         #if no ID's are provided, a list of all ids is returned
         else:
             formatted_ids = ''
             for id in ids:
