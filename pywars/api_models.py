@@ -3,7 +3,7 @@ import json
 class Achievements:
     def __init__(self, json):
         #implement achievements when no ID(s) are passed in (this class likely doesn't need specific implementation for that, but just making sure to remember)
-        pass
+        print("it worked")
 
 class Account:
     def __init__(self, json):

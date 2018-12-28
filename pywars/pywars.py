@@ -13,6 +13,7 @@ class Pywars(API.API_Requests):
         super().__init__(api_key, GUILDWARS2_URL)
     
     def get_achievements(self, ids=None):
+        achievements = []
         
         #TODO implement a different API call when ids are passed into get_achievements
         if (ids == None):
@@ -27,7 +28,9 @@ class Pywars(API.API_Requests):
             response = self._get_request('/achievements?ids=' + formatted_ids)
 
         if response is not None:
-            return api_models.Achievements(response)
+            for achievement in response:
+                achievements.append(api_models.Achievements(achievement))
+            return achievements
         else:
             return None
 

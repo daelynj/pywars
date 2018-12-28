@@ -33,9 +33,10 @@ def main():
        print(str(bank[i]), "\n")
     """
 
-    ids = [1, 5, 10]
+    ids = [1, 5]
     #pass ids into client.get_achievements(ids) to pass the ids for specific achievements
     achievements = client.get_achievements(ids)
+    print(achievements)
 
 if __name__ == "__main__":
     main()
