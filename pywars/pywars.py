@@ -40,6 +40,7 @@ class Pywars(API.API_Requests):
 
         if response is not None:
             for achievement_type in response:
+                daily_achievements.append(achievement_type + ":")
                 for achievement in response[achievement_type]:
                     daily_achievements.append(api_models.Daily_Achievements(achievement))
             return daily_achievements
