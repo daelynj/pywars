@@ -34,6 +34,18 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_daily_achievements(self):
+        daily_achievements = []
+        response = self._get_request('/achievements/daily')
+
+        if response is not None:
+            for achievement_type in response:
+                for achievement in response[achievement_type]:
+                    daily_achievements.append(api_models.Daily_Achievements(achievement))
+            return daily_achievements
+        else:
+            return None
+
     def get_account_info(self):
         response = self._get_request('/account')
 

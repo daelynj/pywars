@@ -38,6 +38,15 @@ class Achievements:
                                                                                                                                                                                         self.flags, self.tiers, self.preqrequisites,
                                                                                                                                                                                         self.rewards, self.bits, self.point_cap)
 
+class Daily_Achievements:
+    def __init__(self, json):
+        self.id = json['id']
+        self.level = json['level']
+        self.required_access = json['required_access']
+
+    def __str__(self):
+        return "ID: {0}\nLevel: {1}\nRequired_access: {2}".format(self.id, self.level, self.required_access)
+
 class Account:
     def __init__(self, json):
         self.id = json['id']

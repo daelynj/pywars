@@ -11,13 +11,13 @@ class API_Requests:
         headers = {'Authorization': 'Bearer {0}'.format(self.api_key)}
         response = requests.get(url, headers=headers)
         
-        if response.status_code == 200:                                      #can add error checking in another file later on
+        if response.status_code == 200:
             return json.loads(response.content.decode('utf-8'))
         else:
             return None
     
-    def _put_request():
+    def _put_request(self):
         pass
 
-    def _post_request():
+    def _post_request(self):
         pass

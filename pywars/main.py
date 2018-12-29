@@ -35,9 +35,13 @@ def main():
 
    #ids = [1, 5]
    #pass ids into client.get_achievements(ids) to pass the ids for specific achievements
-   achievements = client.get_achievements()
-   for i in range(0, len(achievements)):
-      print(str(achievements[i]), "\n")
+   #achievements = client.get_achievements()
+   """for i in range(0, len(achievements)):
+      print(str(achievements[i]), "\n")"""
+
+   daily_achievements = client.get_daily_achievements()
+   for i in range(0, len(daily_achievements)):
+      print(str(daily_achievements[i]), "\n")
 
 if __name__ == "__main__":
     main()
