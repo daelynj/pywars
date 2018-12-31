@@ -39,9 +39,20 @@ def main():
    """for i in range(0, len(achievements)):
       print(str(achievements[i]), "\n")"""
 
-   daily_achievements = client.get_daily_achievements()
-   for i in range(0, len(daily_achievements)):
-      print(str(daily_achievements[i]), "\n")
+   #daily_achievements = client.get_daily_achievements()
+   """for i in range(0, len(daily_achievements)):
+      print(str(daily_achievements[i]), "\n")"""
+
+   #tmrw_daily_achievements = client.get_tmrw_daily_achievements()
+   """for i in range(0, len(tmrw_daily_achievements)):
+      print(str(tmrw_daily_achievements[i]), "\n")"""
+   
+   #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47"]
+   #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47","45410F60-AB66-4146-A0F7-CE99250C4CB0"]
+   #group_achievements = client.get_group_achievements(ids)
+   #print(group_achievements)
+   """for i in range(0, len(group_achievements)):
+      print(str(group_achievements[i]), "\n")"""
 
 if __name__ == "__main__":
     main()
