@@ -48,6 +48,44 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_tmrw_daily_achievements(self):
+        tmrw_daily_achievements = []
+        response = self._get_request('/achievements/daily/tomorrow')
+
+        if response is not None:
+            for achievement_type in response:
+                tmrw_daily_achievements.append(achievement_type + ":")
+                for achievement in response[achievement_type]:
+                    tmrw_daily_achievements.append(api_models.Tmrw_Daily_Achievements(achievement))
+            return tmrw_daily_achievements
+        else:
+            return None
+
+    def get_group_achievements(self, ids):
+        group_achievements = []
+
+        if ids == None:
+            response = self._get_request('/achievements/groups/')
+            return response 
+        elif len(ids) == 1:
+            response = self._get_request('/achievements/groups/' + ids[0])
+            return api_models.Group_Achievements(response)
+        else:
+            formatted_ids = ''
+            for id in ids:
+                if (id is not ids[-1]):
+                    formatted_ids += str(id) + ","
+                else:
+                    formatted_ids += str(id)
+            response = self._get_request('/achievements/groups?ids=' + formatted_ids)
+
+        if response is not None:
+            for achievement in response:
+                group_achievements.append(api_models.Group_Achievements(achievement))
+            return group_achievements
+        else:
+            return None
+
     def get_account_info(self):
         response = self._get_request('/account')
 
