@@ -15,9 +15,8 @@ class Pywars(API.API_Requests):
     def get_achievements(self, ids=None):
         achievements = []
 
-        if (ids == None):
-            response = self._get_request('/achievements')
-            return response                                         #if no ID's are provided, a list of all ids is returned
+        if ids == None:
+            response = self._get_request('/achievements')               #if no ID's are provided, a list of all ids is returned
         else:
             formatted_ids = ''
             for id in ids:
@@ -28,6 +27,8 @@ class Pywars(API.API_Requests):
             response = self._get_request('/achievements?ids=' + formatted_ids)
 
         if response is not None:
+            if ids == None:
+                return response
             for achievement in response:
                 achievements.append(api_models.Achievements(achievement))
             return achievements
@@ -88,7 +89,6 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    
     def get_guild_name(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 
