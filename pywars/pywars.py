@@ -153,11 +153,30 @@ class Pywars(API.API_Requests):
         response = self._get_request('/account/dungeons')
 
         if response is not None:
-            return api_models.Dungeons_since_reset(response)
+            return api_models.Dungeons_Since_Reset(response)
         else:
             return None
 
-    def get_guild_name(self, guild_ID):
+    def get_account_dyes(self):
+        response = self._get_request('/account/dyes')
+
+        if response is not None:
+            return api_models.Account_Dyes(response)
+        else:
+            return None
+
+    def get_account_finishers(self):
+        account_finishers = []
+        response = self._get_request('/account/finishers')
+
+        if response is not None:
+            for finisher in response:
+                account_finishers.append(api_models.Account_Finishers(finisher))
+            return account_finishers
+        else:
+            return None
+
+    def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 
         if response is not None:

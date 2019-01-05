@@ -13,7 +13,7 @@ def main():
    #account = client.get_account_info()
    #print(account)
 
-   #guild = client.get_guild_name(account.guild_IDS[0])
+   #guild = client.get_guild_details(account.guild_IDS[0])
    #print(guild)
 
    #dungeons_since_reset = client.get_account_dungeons_since_reset()
@@ -59,6 +59,13 @@ def main():
    #print(achievements_categories)
    """for i in range(0, len(achievements_categories)):
       print(str(achievements_categories[i]), "\n")"""
+
+   #account_dyes = client.get_account_dyes()
+   #print(account_dyes)
+
+   account_finishers = client.get_account_finishers()
+   for i in range(0, len(account_finishers)):
+      print(str(account_finishers[i]), "\n")
 
 if __name__ == "__main__":
     main()

@@ -171,7 +171,7 @@ class Bank:
         return "ID: {0}\nCount: {1}\nCharges: {2}\nUpgrades: {3}\nSkin: {4}\nInfusions: {5}\nBinding: {6}\nBound to: {7}".format(self.id, self.count, self.charges, self.upgrades, 
                                                                                                                                 self.skin, self.infusions, self.binding, self.bound_to)
                                                                                                                                 
-class Dungeons_since_reset:
+class Dungeons_Since_Reset:
     def __init__(self, json):
         if len(json) is not 0:
             self.dungeons = "\n".join(json)
@@ -183,6 +183,25 @@ class Dungeons_since_reset:
             return "Dungeons done since reset: {0}".format(self.dungeons)
         else:
             return "Dungeons done since reset:\n{0}".format(self.dungeons)
+
+class Account_Dyes:
+    def __init__(self, json):
+        self.dyes = json
+
+    def __str__(self):
+        return "Dyes:\n {0}".format(self.dyes)
+
+class Account_Finishers:
+    def __init__(self, json):
+        self.id = json['id']
+        self.permanent = json['permanent']
+        if self.permanent == False:
+            self.quantity = json['quantity']
+        else:
+            self.quantity = None
+
+    def __str__(self):
+        return "ID: {0}\nPermanent: {1}\nQuantity: {2}".format(self.id, self.permanent, self.quantity)
 
 class Guild:
     def __init__(self, json):
