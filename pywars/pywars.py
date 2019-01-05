@@ -61,15 +61,13 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_group_achievements(self, ids):
+    def get_group_achievements(self, ids=None):
         group_achievements = []
 
         if ids == None:
-            response = self._get_request('/achievements/groups/')
-            return response 
+            response = self._get_request('/achievements/groups/') 
         elif len(ids) == 1:
             response = self._get_request('/achievements/groups/' + ids[0])
-            return api_models.Group_Achievements(response)
         else:
             formatted_ids = ''
             for id in ids:
@@ -80,9 +78,14 @@ class Pywars(API.API_Requests):
             response = self._get_request('/achievements/groups?ids=' + formatted_ids)
 
         if response is not None:
-            for achievement in response:
-                group_achievements.append(api_models.Group_Achievements(achievement))
-            return group_achievements
+            if ids == None:
+                return response
+            elif len(ids) == 1:
+                return api_models.Group_Achievements(response)
+            else:
+                for achievement in response:
+                    group_achievements.append(api_models.Group_Achievements(achievement))
+                return group_achievements
         else:
             return None
 
