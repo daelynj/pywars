@@ -189,7 +189,7 @@ class Account_Dyes:
         self.dyes = json
 
     def __str__(self):
-        return "Dyes:\n {0}".format(self.dyes)
+        return "Dyes:\n{0}".format(self.dyes)
 
 class Account_Finishers:
     def __init__(self, json):
@@ -202,6 +202,13 @@ class Account_Finishers:
 
     def __str__(self):
         return "ID: {0}\nPermanent: {1}\nQuantity: {2}".format(self.id, self.permanent, self.quantity)
+
+class Account_Gliders:
+    def __init__(self, json):
+        self.gliders = json
+
+    def __str__(self):
+        return "Gliders:\n{0}".format(self.gliders)
 
 class Guild:
     def __init__(self, json):

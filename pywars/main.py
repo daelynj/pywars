@@ -63,9 +63,12 @@ def main():
    #account_dyes = client.get_account_dyes()
    #print(account_dyes)
 
-   account_finishers = client.get_account_finishers()
-   for i in range(0, len(account_finishers)):
-      print(str(account_finishers[i]), "\n")
+   #account_finishers = client.get_account_finishers()
+   """for i in range(0, len(account_finishers)):
+      print(str(account_finishers[i]), "\n")"""
+
+   account_gliders = client.get_account_gliders()
+   print(account_gliders)
 
 if __name__ == "__main__":
     main()

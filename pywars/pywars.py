@@ -116,7 +116,7 @@ class Pywars(API.API_Requests):
         else:
             return None        
 
-    def get_account_info(self):
+    def get_account_info(self):                                 #TODO: the world variable in response is resolvable against /v2/worlds
         response = self._get_request('/account')
 
         if response is not None:
@@ -135,7 +135,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_bank(self):
+    def get_account_bank(self):                                 #TODO: the skin variable in response is resolvable against /v2/skins 
         bank_items = []
         response = self._get_request('/account/bank')
 
@@ -149,7 +149,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_dungeons_since_reset(self):
+    def get_account_dungeons_since_reset(self):                 #TODO: this is resolvable against /v2/dungeons
         response = self._get_request('/account/dungeons')
 
         if response is not None:
@@ -157,7 +157,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_dyes(self):
+    def get_account_dyes(self):                                 #TODO: this is resolvable against /v2/colors
         response = self._get_request('/account/dyes')
 
         if response is not None:
@@ -165,7 +165,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_finishers(self):
+    def get_account_finishers(self):                            #TODO: this is resolvable against /v2/finishers
         account_finishers = []
         response = self._get_request('/account/finishers')
 
@@ -175,6 +175,14 @@ class Pywars(API.API_Requests):
             return account_finishers
         else:
             return None
+
+    def get_account_gliders(self):                              #TODO: this is resolvable against /v2/gliders
+        response = self._get_request('/account/gliders')
+
+        if response is not None:
+            return api_models.Account_Gliders(response)
+        else:
+            return None  
 
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
