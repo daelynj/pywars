@@ -89,6 +89,33 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_achievements_categories(self, ids=None):
+        achievements_categories = []
+        if ids == None:
+            response = self._get_request('/achievements/categories/') 
+        elif len(ids) == 1:
+            response = self._get_request('/achievements/categories/' + ids[0])
+        else:
+            formatted_ids = ''
+            for id in ids:
+                if (id is not ids[-1]):
+                    formatted_ids += str(id) + ","
+                else:
+                    formatted_ids += str(id)
+            response = self._get_request('/achievements/categories?ids=' + formatted_ids)
+
+        if response is not None:
+            if ids == None:
+                return response
+            elif len(ids) == 1:
+                return api_models.Achievements_Categories(response)
+            else:
+                for achievement in response:
+                    achievements_categories.append(api_models.Achievements_Categories(achievement))
+                return achievements_categories
+        else:
+            return None        
+
     def get_account_info(self):
         response = self._get_request('/account')
 

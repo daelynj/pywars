@@ -49,10 +49,16 @@ def main():
    
    #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47"]
    #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47","45410F60-AB66-4146-A0F7-CE99250C4CB0"]
-   #group_achievements = client.get_group_achievements(ids)
+   #group_achievements = client.get_group_achievements()
    #print(group_achievements)
    """for i in range(0, len(group_achievements)):
       print(str(group_achievements[i]), "\n")"""
+
+   #ids = ["1", "2"]
+   #achievements_categories = client.get_achievements_categories(ids)
+   #print(achievements_categories)
+   """for i in range(0, len(achievements_categories)):
+      print(str(achievements_categories[i]), "\n")"""
 
 if __name__ == "__main__":
     main()
