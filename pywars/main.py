@@ -67,8 +67,12 @@ def main():
    """for i in range(0, len(account_finishers)):
       print(str(account_finishers[i]), "\n")"""
 
-   account_gliders = client.get_account_gliders()
-   print(account_gliders)
+   #account_gliders = client.get_account_gliders()
+   #print(account_gliders)
+
+   #account_cats = client.get_account_cats()
+   """for i in range(0, len(account_cats)):
+      print(str(account_cats[i]), "\n")""" 
 
 if __name__ == "__main__":
     main()

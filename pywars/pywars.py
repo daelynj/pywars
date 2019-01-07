@@ -182,7 +182,18 @@ class Pywars(API.API_Requests):
         if response is not None:
             return api_models.Account_Gliders(response)
         else:
-            return None  
+            return None
+
+    def get_account_cats(self):
+        account_cats = []
+        response = self._get_request('/account/home/cats')
+
+        if response is not None:
+            for cat in response:
+                account_cats.append(api_models.Account_Cats(cat))
+            return account_cats
+        else:
+            return None
 
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
