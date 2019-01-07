@@ -195,11 +195,22 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_nodes(self):
+    def get_account_nodes(self):                                #TODO: Each string in response is resolvable against /v2/nodes
         response = self._get_request('/account/home/nodes')
 
         if response is not None:
             return api_models.Account_Nodes(response)
+        else:
+            return None
+
+    def get_account_inventory(self):
+        account_inventory = []
+        response = self._get_request('/account/inventory')
+
+        if response is not None:
+            for item in response:
+                account_inventory.append(api_models.Account_Inventory(item))
+            return account_inventory
         else:
             return None
 

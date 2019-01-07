@@ -74,8 +74,12 @@ def main():
    """for i in range(0, len(account_cats)):
       print(str(account_cats[i]), "\n")""" 
 
-   account_nodes = client.get_account_nodes()
-   print(account_nodes)
+   #account_nodes = client.get_account_nodes()
+   #print(account_nodes)
+
+   account_inventory = client.get_account_inventory()
+   for i in range(0, len(account_inventory)):
+      print(str(account_inventory[i]), "\n")
 
 if __name__ == "__main__":
     main()
