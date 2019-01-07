@@ -222,6 +222,13 @@ class Account_Cats:
     def __str__(self):
         return "ID: {0}\nHint: {1}".format(self.id, self.hint)
 
+class Account_Nodes:
+    def __init__(self, json):
+        self.nodes = json
+
+    def __str__(self):
+        return "Nodes: {0}".format(self.nodes)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

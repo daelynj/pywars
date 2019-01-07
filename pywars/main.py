@@ -74,5 +74,8 @@ def main():
    """for i in range(0, len(account_cats)):
       print(str(account_cats[i]), "\n")""" 
 
+   account_nodes = client.get_account_nodes()
+   print(account_nodes)
+
 if __name__ == "__main__":
     main()
