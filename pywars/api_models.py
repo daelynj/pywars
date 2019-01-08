@@ -258,6 +258,13 @@ class Account_Inventory:
     def __str__(self):
         return "ID: {0}\nCount: {1}\nCharges: {2}\nSkin: {3}\nUpgrades: {4}\nInfusions: {5}\nBinding: {6}".format(self.id, self.count, self.charges, self.skin, self.upgrades, self.infusions, self.binding)
 
+class Account_Mailcarriers:
+    def __init__(self, json):
+        self.mailcarriers = json
+    
+    def __str__(self):
+        return "Mailcarriers: {0}".format(self.mailcarriers)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

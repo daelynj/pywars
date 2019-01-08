@@ -214,6 +214,14 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_account_mailcarriers(self):                         #TODO: can be resolved against /v2/mailcarriers
+        response = self._get_request('/account/mailcarriers')
+
+        if response is not None:
+            return api_models.Account_Mailcarriers(response)
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 
