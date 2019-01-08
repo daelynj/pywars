@@ -265,6 +265,14 @@ class Account_Mailcarriers:
     def __str__(self):
         return "Mailcarriers: {0}".format(self.mailcarriers)
 
+class Account_Masteries:
+    def __init__(self, json):
+        self.id = json['id']
+        self.level = json['level']
+    
+    def __str__(self):
+        return "ID: {0}\nLevel: {1}".format(self.id, self.level)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

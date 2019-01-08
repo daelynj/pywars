@@ -81,8 +81,11 @@ def main():
    """for i in range(0, len(account_inventory)):
       print(str(account_inventory[i]), "\n")"""
 
-   account_mailcarriers = client.get_account_mailcarriers()
-   print(account_mailcarriers)
+   #account_mailcarriers = client.get_account_mailcarriers()
+   #print(account_mailcarriers)
 
+   account_masteries = client.get_account_masteries()
+   for i in range(0, len(account_masteries)):
+      print(str(account_masteries[i]), "\n")
 if __name__ == "__main__":
     main()

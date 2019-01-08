@@ -222,6 +222,17 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_account_masteries(self):
+        account_masteries = []
+        response = self._get_request('/account/masteries')
+
+        if response is not None:
+            for mastery in response:
+                account_masteries.append(api_models.Account_Masteries(mastery))
+            return account_masteries
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 
