@@ -281,6 +281,19 @@ class Account_Mastery_Points:
     def __str__(self):
         return "totals: {0}\nUnlocked: {1}".format(self.totals, self.unlocked)
 
+class Account_Materials:
+    def __init__(self, json):
+        self.id = json['id']
+        self.category = json['category']
+        self.count = json['count']
+        if 'binding' in json:
+            self.binding = json['binding']
+        else:
+            self.binding = None
+
+    def __str__(self):
+        return "ID: {0}\nCategory: {1}\nBinding: {2}\nCount: {3}".format(self.id, self.category, self.count, self.binding)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

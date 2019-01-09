@@ -88,8 +88,12 @@ def main():
    """for i in range(0, len(account_masteries)):
       print(str(account_masteries[i]), "\n")"""
 
-   account_mastery_points = client.get_account_mastery_points()
-   print(account_mastery_points)
+   #account_mastery_points = client.get_account_mastery_points()
+   #print(account_mastery_points)
+
+   account_materials = client.get_account_materials()
+   for i in range(0, len(account_materials)):
+      print(str(account_materials[i]), "\n")
 
 if __name__ == "__main__":
     main()

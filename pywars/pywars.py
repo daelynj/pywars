@@ -241,6 +241,17 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_account_materials(self):
+        account_materials = []
+        response = self._get_request('/account/materials')
+
+        if response is not None:
+            for material in response:
+                account_materials.append(api_models.Account_Materials(material))
+            return account_materials
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 
