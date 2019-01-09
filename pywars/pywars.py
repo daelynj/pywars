@@ -222,14 +222,22 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_masteries(self):
-        account_masteries = []
+    """def get_account_masteries(self):                         #This is currently bugged, receiving an Error 400 (bad request error), I'm not sure why, the URL and Headers are just fine
+        account_masteries = []                                  #TODO: The ID in response is resolvable against /v2/masteries
         response = self._get_request('/account/masteries')
 
         if response is not None:
             for mastery in response:
                 account_masteries.append(api_models.Account_Masteries(mastery))
             return account_masteries
+        else:
+            return None"""
+
+    def get_account_mastery_points(self):
+        response = self._get_request('/account/mastery/points')
+
+        if response is not None:
+            return api_models.Account_Mastery_Points(response)
         else:
             return None
 

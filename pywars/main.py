@@ -84,8 +84,12 @@ def main():
    #account_mailcarriers = client.get_account_mailcarriers()
    #print(account_mailcarriers)
 
-   account_masteries = client.get_account_masteries()
-   for i in range(0, len(account_masteries)):
-      print(str(account_masteries[i]), "\n")
+   #account_masteries = client.get_account_masteries()
+   """for i in range(0, len(account_masteries)):
+      print(str(account_masteries[i]), "\n")"""
+
+   account_mastery_points = client.get_account_mastery_points()
+   print(account_mastery_points)
+
 if __name__ == "__main__":
     main()

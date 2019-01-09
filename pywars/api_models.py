@@ -265,13 +265,21 @@ class Account_Mailcarriers:
     def __str__(self):
         return "Mailcarriers: {0}".format(self.mailcarriers)
 
-class Account_Masteries:
+"""class Account_Masteries:                                         #This is currently bugged, receiving an Error 400 (bad request error), I'm not sure why, the URL and Headers are just fine
     def __init__(self, json):
         self.id = json['id']
         self.level = json['level']
     
     def __str__(self):
-        return "ID: {0}\nLevel: {1}".format(self.id, self.level)
+        return "ID: {0}\nLevel: {1}".format(self.id, self.level)"""
+
+class Account_Mastery_Points:
+    def __init__(self, json):
+        self.totals = json['totals']
+        self.unlocked = json['unlocked']
+
+    def __str__(self):
+        return "totals: {0}\nUnlocked: {1}".format(self.totals, self.unlocked)
 
 class Guild:
     def __init__(self, json):

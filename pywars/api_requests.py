@@ -10,6 +10,7 @@ class API_Requests:
         url = self.api_url_base + path
         headers = {'Authorization': 'Bearer {0}'.format(self.api_key)}
         response = requests.get(url, headers=headers)
+        
         if response.status_code == 200:
             return json.loads(response.content.decode('utf-8'))
         elif response.status_code == 404:
