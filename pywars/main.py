@@ -91,9 +91,12 @@ def main():
    #account_mastery_points = client.get_account_mastery_points()
    #print(account_mastery_points)
 
-   account_materials = client.get_account_materials()
-   for i in range(0, len(account_materials)):
-      print(str(account_materials[i]), "\n")
+   #account_materials = client.get_account_materials()
+   """for i in range(0, len(account_materials)):
+      print(str(account_materials[i]), "\n")"""
+
+   account_minis = client.get_account_minis()
+   print(account_minis)
 
 if __name__ == "__main__":
     main()

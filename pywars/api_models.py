@@ -292,7 +292,14 @@ class Account_Materials:
             self.binding = None
 
     def __str__(self):
-        return "ID: {0}\nCategory: {1}\nBinding: {2}\nCount: {3}".format(self.id, self.category, self.count, self.binding)
+        return "ID: {0}\nCategory: {1}\nBinding: {2}\nCount: {3}".format(self.id, self.category, self.binding, self.count)
+
+class Account_Minis:
+    def __init__(self, json):
+        self.minis = json
+
+    def __str__(self):
+        return "Minis: {0}".format(self.minis)
 
 class Guild:
     def __init__(self, json):

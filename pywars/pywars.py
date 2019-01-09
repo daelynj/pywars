@@ -241,7 +241,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_materials(self):
+    def get_account_materials(self):                            #TODO: category in responses is resolvable against /v2/materials
         account_materials = []
         response = self._get_request('/account/materials')
 
@@ -251,6 +251,14 @@ class Pywars(API.API_Requests):
             return account_materials
         else:
             return None
+
+    def get_account_minis(self):
+        response = self._get_request('/account/minis')
+
+        if response is not None:
+            return api_models.Account_Minis(response)
+        else:
+            return None        
 
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
