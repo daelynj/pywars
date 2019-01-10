@@ -91,6 +91,7 @@ class Pywars(API.API_Requests):
 
     def get_achievements_categories(self, ids=None):
         achievements_categories = []
+
         if ids == None:
             response = self._get_request('/achievements/categories/') 
         elif len(ids) == 1:
@@ -257,6 +258,14 @@ class Pywars(API.API_Requests):
 
         if response is not None:
             return api_models.Account_Minis(response)
+        else:
+            return None        
+
+    def get_account_mounts_skins(self):
+        response = self._get_request('/account/mounts/skins')
+
+        if response is not None:
+            return api_models.Account_Mounts_Skins(response)
         else:
             return None        
 

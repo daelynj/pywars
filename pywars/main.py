@@ -95,8 +95,11 @@ def main():
    """for i in range(0, len(account_materials)):
       print(str(account_materials[i]), "\n")"""
 
-   account_minis = client.get_account_minis()
-   print(account_minis)
+   #account_minis = client.get_account_minis()
+   #print(account_minis)
+
+   account_mounts_skins = client.get_account_mounts_skins()
+   print(account_mounts_skins)
 
 if __name__ == "__main__":
     main()
