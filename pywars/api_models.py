@@ -315,6 +315,13 @@ class Account_Mount_Types:
     def __str__(self):
         return "Mount Types: {0}".format(self.mount_types)
 
+class Account_Outfits:
+    def __init__(self, json):
+        self.outfits = json
+
+    def __str__(self):
+        return "Outfits: {0}".format(self.outfits)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

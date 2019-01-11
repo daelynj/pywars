@@ -269,13 +269,21 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_mount_types(self):
+    def get_account_mount_types(self):                          #TODO: resolvable against /v2/mounts/types
         response = self._get_request('/account/mounts/types')
 
         if response is not None:
             return api_models.Account_Mount_Types(response)
         else:
             return None
+
+    def get_account_outfits(self):
+        response = self._get_request('/account/outfits')
+
+        if response is not None:
+            return api_models.Account_Outfits(response)
+        else:
+            return Noone
 
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))

@@ -101,8 +101,11 @@ def main():
    #account_mounts_skins = client.get_account_mounts_skins()
    #print(account_mounts_skins)
 
-   account_mount_types = client.get_account_mount_types()
-   print(account_mount_types)
+   #account_mount_types = client.get_account_mount_types()
+   #print(account_mount_types)
+
+   #account_outfits = client.get_account_outfits()
+   #print(account_outfits)
 
 if __name__ == "__main__":
     main()
