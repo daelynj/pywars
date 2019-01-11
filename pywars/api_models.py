@@ -308,6 +308,13 @@ class Account_Mounts_Skins:
     def __str__(self):
         return "Mount Skins: {0}".format(self.mounts_skins)
 
+class Account_Mount_Types:
+    def __init__(self, json):
+        self.mount_types = json
+
+    def __str__(self):
+        return "Mount Types: {0}".format(self.mount_types)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

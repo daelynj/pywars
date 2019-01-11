@@ -98,8 +98,11 @@ def main():
    #account_minis = client.get_account_minis()
    #print(account_minis)
 
-   account_mounts_skins = client.get_account_mounts_skins()
-   print(account_mounts_skins)
+   #account_mounts_skins = client.get_account_mounts_skins()
+   #print(account_mounts_skins)
+
+   account_mount_types = client.get_account_mount_types()
+   print(account_mount_types)
 
 if __name__ == "__main__":
     main()
