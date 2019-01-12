@@ -117,7 +117,7 @@ class Pywars(API.API_Requests):
         else:
             return None        
 
-    def get_account_info(self):                                 #TODO: the world variable in response is resolvable against /v2/worlds
+    def get_account_info(self):                                 #the world variable in response is resolvable against /v2/worlds
         response = self._get_request('/account')
 
         if response is not None:
@@ -136,7 +136,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_bank(self):                                 #TODO: the skin variable in response is resolvable against /v2/skins 
+    def get_account_bank(self):                                 #the skin variable in response is resolvable against /v2/skins 
         bank_items = []
         response = self._get_request('/account/bank')
 
@@ -150,7 +150,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_dungeons_since_reset(self):                 #TODO: this is resolvable against /v2/dungeons
+    def get_account_dungeons_since_reset(self):                 #this is resolvable against /v2/dungeons
         response = self._get_request('/account/dungeons')
 
         if response is not None:
@@ -158,7 +158,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_dyes(self):                                 #TODO: this is resolvable against /v2/colors
+    def get_account_dyes(self):                                 #this is resolvable against /v2/colors
         response = self._get_request('/account/dyes')
 
         if response is not None:
@@ -166,7 +166,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_finishers(self):                            #TODO: this is resolvable against /v2/finishers
+    def get_account_finishers(self):                            #this is resolvable against /v2/finishers
         account_finishers = []
         response = self._get_request('/account/finishers')
 
@@ -177,7 +177,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_gliders(self):                              #TODO: this is resolvable against /v2/gliders
+    def get_account_gliders(self):                              #this is resolvable against /v2/gliders
         response = self._get_request('/account/gliders')
 
         if response is not None:
@@ -185,7 +185,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_cats(self):                                 #TODO: ID in response is resolvable against /v2/cats
+    def get_account_cats(self):                                 #ID in response is resolvable against /v2/cats
         account_cats = []
         response = self._get_request('/account/home/cats')
 
@@ -196,7 +196,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_nodes(self):                                #TODO: Each string in response is resolvable against /v2/nodes
+    def get_account_nodes(self):                                #Each string in response is resolvable against /v2/nodes
         response = self._get_request('/account/home/nodes')
 
         if response is not None:
@@ -215,7 +215,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_mailcarriers(self):                         #TODO: can be resolved against /v2/mailcarriers
+    def get_account_mailcarriers(self):                         #can be resolved against /v2/mailcarriers
         response = self._get_request('/account/mailcarriers')
 
         if response is not None:
@@ -224,7 +224,7 @@ class Pywars(API.API_Requests):
             return None
 
     """def get_account_masteries(self):                         #This is currently bugged, receiving an Error 400 (bad request error), I'm not sure why, the URL and Headers are just fine
-        account_masteries = []                                  #TODO: The ID in response is resolvable against /v2/masteries
+        account_masteries = []                                  #The ID in response is resolvable against /v2/masteries
         response = self._get_request('/account/masteries')
 
         if response is not None:
@@ -242,7 +242,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_materials(self):                            #TODO: category in responses is resolvable against /v2/materials
+    def get_account_materials(self):                            #category in responses is resolvable against /v2/materials
         account_materials = []
         response = self._get_request('/account/materials')
 
@@ -261,7 +261,7 @@ class Pywars(API.API_Requests):
         else:
             return None        
 
-    def get_account_mounts_skins(self):                         #TODO: resolvable against /v2/mounts/skins
+    def get_account_mounts_skins(self):                         #resolvable against /v2/mounts/skins
         response = self._get_request('/account/mounts/skins')
 
         if response is not None:
@@ -269,7 +269,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_mount_types(self):                          #TODO: resolvable against /v2/mounts/types
+    def get_account_mount_types(self):                          #resolvable against /v2/mounts/types
         response = self._get_request('/account/mounts/types')
 
         if response is not None:
@@ -277,7 +277,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_outfits(self):                              #TODO: resolvable against /v2/outfits
+    def get_account_outfits(self):                              #resolvable against /v2/outfits
         response = self._get_request('/account/outfits')
 
         if response is not None:
