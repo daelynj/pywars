@@ -285,7 +285,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_pvp_heroes(self):
+    def get_account_pvp_heroes(self):                           #resolvable against /v2/pvp/heroes
         response = self._get_request('/account/pvp/heroes')
 
         if response is not None:
