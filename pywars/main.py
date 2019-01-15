@@ -107,8 +107,11 @@ def main():
    #account_outfits = client.get_account_outfits()
    #print(account_outfits)
 
-   account_pvp_heroes = client.get_account_pvp_heroes()
-   print(account_pvp_heroes)
+   #account_pvp_heroes = client.get_account_pvp_heroes()
+   #print(account_pvp_heroes)
+
+   account_raids = client.get_account_raids()
+   print(account_raids)
 
 if __name__ == "__main__":
     main()

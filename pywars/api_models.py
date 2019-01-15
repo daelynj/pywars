@@ -329,6 +329,13 @@ class Account_Pvp_Heroes:
     def __str__(self):
         return "PvP Heroes: {0}".format(self.pvp_heroes)
 
+class Account_Raids:
+    def __init__(self, json):
+        self.raids = json
+
+    def __str__(self):
+        return "Raids: {0}".format(self.raids)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']
