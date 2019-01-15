@@ -322,6 +322,13 @@ class Account_Outfits:
     def __str__(self):
         return "Outfits: {0}".format(self.outfits)
 
+class Account_Pvp_Heroes:
+    def __init__(self, json):
+        self.pvp_heroes = json
+
+    def __str__(self):
+        return "PvP Heroes: {0}".format(self.pvp_heroes)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']
