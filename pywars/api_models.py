@@ -336,6 +336,13 @@ class Account_Raids:
     def __str__(self):
         return "Raids: {0}".format(self.raids)
 
+class Account_Recipes:
+    def __init__(self, json):
+        self.recipes = json
+
+    def __str__(self):
+        return "Recipes: {0}".format(self.recipes)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']
