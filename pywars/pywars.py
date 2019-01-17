@@ -293,7 +293,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_raids(self):
+    def get_account_raids(self):                                #resolvable against /v2/raids
         response = self._get_request('/account/raids')
         
         if response is not None:
@@ -301,7 +301,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_recipes(self):
+    def get_account_recipes(self):                              #resolvable against /v2/recipes
         response = self._get_request('/account/recipes')
 
         if response is not None:
