@@ -113,8 +113,11 @@ def main():
    #account_raids = client.get_account_raids()
    #print(account_raids)
 
-   account_recipes = client.get_account_recipes()
-   print(account_recipes)
+   #account_recipes = client.get_account_recipes()
+   #print(account_recipes)
 
+   account_skins = client.get_account_skins()
+   print(account_skins)
+   
 if __name__ == "__main__":
     main()
