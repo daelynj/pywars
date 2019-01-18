@@ -325,7 +325,7 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_account_wallet(self):
+    def get_account_wallet(self):                               #ID is resolvable against /v2/currencies
         account_wallet = []
         response = self._get_request('/account/wallet')
 
