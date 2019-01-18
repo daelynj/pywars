@@ -350,6 +350,13 @@ class Account_Skins:
     def __str__(self):
         return "Skins: {0}".format(self.skins)
 
+class Account_Titles:
+    def __init__(self, json):
+        self.titles = json
+
+    def __str__(self):
+        return "TItles: {0}".format(self.titles)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

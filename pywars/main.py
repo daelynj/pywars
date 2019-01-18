@@ -116,8 +116,11 @@ def main():
    #account_recipes = client.get_account_recipes()
    #print(account_recipes)
 
-   account_skins = client.get_account_skins()
-   print(account_skins)
+   #account_skins = client.get_account_skins()
+   #print(account_skins)
+
+   account_titles = client.get_account_titles()
+   print(account_titles)
    
 if __name__ == "__main__":
     main()
