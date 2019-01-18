@@ -325,6 +325,17 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_account_wallet(self):
+        account_wallet = []
+        response = self._get_request('/account/wallet')
+
+        if response is not None:
+            for currency in response:
+                account_wallet.append(api_models.Account_Wallet(currency))
+            return account_wallet
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 

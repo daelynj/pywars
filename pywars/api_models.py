@@ -355,7 +355,15 @@ class Account_Titles:
         self.titles = json
 
     def __str__(self):
-        return "TItles: {0}".format(self.titles)
+        return "Titles: {0}".format(self.titles)
+
+class Account_Wallet:
+    def __init__(self, json):
+        self.id = json['id']
+        self.value = json['value']
+    
+    def __str__(self):
+        return "ID: {0}\nValue: {1}".format(self.id, self.value)
 
 class Guild:
     def __init__(self, json):

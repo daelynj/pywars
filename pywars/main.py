@@ -119,8 +119,12 @@ def main():
    #account_skins = client.get_account_skins()
    #print(account_skins)
 
-   account_titles = client.get_account_titles()
-   print(account_titles)
+   #account_titles = client.get_account_titles()
+   #print(account_titles)
+
+   #account_wallet = client.get_account_wallet()
+   """for i in range(0, len(account_wallet)):
+      print(str(account_wallet[i]), "\n")"""
    
 if __name__ == "__main__":
     main()
