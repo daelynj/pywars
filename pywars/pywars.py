@@ -336,6 +336,9 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_characters(self):
+        pass
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 

@@ -365,6 +365,13 @@ class Account_Wallet:
     def __str__(self):
         return "ID: {0}\nValue: {1}".format(self.id, self.value)
 
+class Characters:
+    def __init__(self, json):
+        pass
+
+    def __str__(self):
+        pass
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']
