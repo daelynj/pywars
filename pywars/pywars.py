@@ -336,8 +336,11 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_characters(self):
-        response = self._get_request('/characters')
+    def get_characters(self, params=None):
+        if params == None:
+            response = self._get_request('/characters')
+        else:
+            response = self._get_request('/characters?ids=' + params)
 
         if response is not None:
             return api_models.Characters(response)
