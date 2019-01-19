@@ -367,10 +367,10 @@ class Account_Wallet:
 
 class Characters:
     def __init__(self, json):
-        pass
+        self.characters = json
 
     def __str__(self):
-        pass
+        return "Characters: {0}".format(self.characters)
 
 class Guild:
     def __init__(self, json):

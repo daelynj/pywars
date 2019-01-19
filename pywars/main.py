@@ -125,6 +125,9 @@ def main():
    #account_wallet = client.get_account_wallet()
    """for i in range(0, len(account_wallet)):
       print(str(account_wallet[i]), "\n")"""
+
+   #characters = client.get_characters()              # if the endpoint is accessed without any parameters it will return an array of characters by name
+   #print(characters)
    
 if __name__ == "__main__":
     main()
