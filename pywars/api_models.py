@@ -372,6 +372,13 @@ class Characters:
     def __str__(self):
         return "Characters: {0}".format(self.characters)
 
+class Character_Info:
+    def __init__(self, json):
+        self.character = json
+
+    def __str__(self):
+        return "Character: {0}".format(self.character)
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']
