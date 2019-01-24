@@ -345,11 +345,11 @@ class Pywars(API.API_Requests):
         else:
             return None
 
-    def get_character_info(self, character_name):
+    def get_character_overview(self, character_name):
         response = self._get_request('/characters/' + character_name)
 
         if response is not None:
-            return api_models.Character_Info(response)
+            return api_models.Character_Overview(response)
         else:
             return None
 

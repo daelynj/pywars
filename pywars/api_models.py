@@ -372,12 +372,45 @@ class Characters:
     def __str__(self):
         return "Characters: {0}".format(self.characters)
 
-class Character_Info:
+class Character_Overview:
     def __init__(self, json):
-        self.character = json
+        self.name = json['name']
+        self.race = json['race']
+        self.gender = json['gender']
+        self.profession = json['profession']
+        self.level = json['level']
+        self.age = json['age']
+        self.created = json['created']
+        self.deaths = json['deaths']
+        self.crafting = json['crafting']
+        self.equipment = json['equipment']
+        self.backstory = json['backstory']
+        self.wvw_abilities = json['wvw_abilities']
+        self.specializations = json['specializations']
+        self.skills = json['skills']
+        self.equipment = json['equipment']
+        self.recipes = json['recipes']
+        self.equipment_pvp = json['equipment_pvp']
+        self.training = json['training']
+        self.bags = json['bags']
+
+        if 'guild' in json:
+            self.guild = json['guild']
+        else:
+            self.guild = None
+        if 'title' in json:
+            self.title = json['title']
+        else:
+            self.title = None
+        
 
     def __str__(self):
-        return "Character: {0}".format(self.character)
+        return "Name: {0}\nRace: {1}\nGender: {2}\nProfession: {3}\nLevel: {4}\nGuild: {5}\nAge: {6}\nCreated: {7}\n", \
+                "Deaths: {8}\nCrafting: {9}\nTitle: {10}\nBackstory: {11}\nWvW abilities: {12}\nSpecializations: {13}\n", \
+                "Skills: {14}\nEquipment: {15}\n Recipes: {16}\nPvP equipment: {17}\nTraining: {18}\nBags: {19}".format(self.name, self.race, self.gender, self.profession, self.level, 
+                                                                                                                        self.guild, self.age, self.created, self.deaths, self.crafting, 
+                                                                                                                        self.title, self.backstory, self.wvw_abilities, self.specializations,
+                                                                                                                        self.skills, self.equipment, self.recipes, self.equipment_pvp)
 
 class Guild:
     def __init__(self, json):
