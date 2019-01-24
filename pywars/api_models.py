@@ -403,7 +403,8 @@ class Character_Overview:
         else:
             self.title = None
         
-
+    #perhaps need to figure out a way to make this sentence not so long
+    #I also don't know how I feel about the equipment etc. lists appearing the way they do in the print statement, but really the prints are just for testing
     def __str__(self):
         return "Name: {0}\nRace: {1}\nGender: {2}\nProfession: {3}\nLevel: {4}\nGuild: {5}\nAge: {6}\nCreated: {7}\nDeaths: {8}\nCrafting: {9}\nTitle: {10}\nBackstory: {11}\nWvW abilities: {12}\nSpecializations: {13}\nSkills: {14}\nEquipment: {15}\n Recipes: {16}\nPvP equipment: {17}\nTraining: {18}\nBags: {19}".format(self.name, self.race, self.gender, self.profession, self.level, 
                                                                                                                         self.guild, self.age, self.created, self.deaths, self.crafting, 
