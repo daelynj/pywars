@@ -43,9 +43,9 @@ def main():
    """for i in range(0, len(daily_achievements)):
       print(str(daily_achievements[i]), "\n")"""
 
-   #tmrw_daily_achievements = client.get_tmrw_daily_achievements()
-   """for i in range(0, len(tmrw_daily_achievements)):
-      print(str(tmrw_daily_achievements[i]), "\n")"""
+   tmrw_daily_achievements = client.get_tmrw_daily_achievements()
+   for i in range(0, len(tmrw_daily_achievements)):
+      print(str(tmrw_daily_achievements[i]), "\n")
    
    #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47"]
    #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47","45410F60-AB66-4146-A0F7-CE99250C4CB0"]
@@ -129,7 +129,7 @@ def main():
    #characters = client.get_characters()              # if the endpoint is accessed without any parameters it will return an array of characters by name
    #print(characters)
 
-   character = client.get_character_overview('Beauty Eh')
+   #character = client.get_character_overview('Beauty Eh')
    #print(character)
    
 if __name__ == "__main__":
