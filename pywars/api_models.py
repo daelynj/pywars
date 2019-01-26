@@ -454,7 +454,55 @@ class Character_Equipment:
         pass
         
     def __str__(self):
-        pass    
+        pass
+class Character_Heropoints:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
+
+class Character_Inventory:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
+
+class Character_Recipes:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
+
+class Character_Sab:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
+
+class Character_Skills:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
+
+class Character_Specializations:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
+
+class Character_Training:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass
 
 class Guild:
     def __init__(self, json):
