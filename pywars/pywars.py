@@ -361,6 +361,22 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_character_core(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/core')
+
+        if response is not None:
+            return api_models.Character_Core(response)
+        else:
+            return None
+
+    def get_character_crafting(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/crafting')
+
+        if response is not None:
+            return api_models.Character_Crafting(response)
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 

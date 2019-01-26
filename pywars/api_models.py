@@ -412,6 +412,13 @@ class Character_Overview:
                                                                                                                         self.skills, self.equipment, self.recipes, self.equipment_pvp, 
                                                                                                                         self.training, self.bags)
 
+class Character_Backstory:
+    def __init__(self, json):
+        self.backstory = json['backstory']
+
+    def __str__(self):
+        return "Backstory: {0}".format(self.backstory)
+
 class Character_Core:
     def __init__(self, json):
         self.name = json['name']
@@ -435,10 +442,10 @@ class Character_Core:
     def __str__str(self):
         pass
 
-class Character_Backstory:
+class Character_Crafting:
     def __init__(self, json):
         pass
-
+        
     def __str__(self):
         pass
 

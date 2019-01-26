@@ -132,7 +132,7 @@ def main():
    #character = client.get_character_overview('Beauty Eh')
    #print(character)
 
-   character_backstory = client.get_character_backstory('Beauty Eh')
+   #character_backstory = client.get_character_backstory('Beauty Eh')
    #print(character_backstory)
    
 if __name__ == "__main__":
