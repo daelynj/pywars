@@ -377,6 +377,14 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_character_equipment(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/equipment')
+
+        if response is not None:
+            return api_models.Character_Equipment(response)
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 

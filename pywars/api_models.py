@@ -449,6 +449,13 @@ class Character_Crafting:
     def __str__(self):
         pass
 
+class Character_Equipment:
+    def __init__(self, json):
+        pass
+        
+    def __str__(self):
+        pass    
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']
