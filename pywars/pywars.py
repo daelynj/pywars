@@ -385,6 +385,62 @@ class Pywars(API.API_Requests):
         else:
             return None
 
+    def get_character_heropoints(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/heropoints')
+
+        if response is not None:
+            return api_models.Character_Heropoints(response)
+        else:
+            return None
+
+    def get_character_inventory(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/inventory')
+
+        if response is not None:
+            return api_models.Character_Inventory(response)
+        else:
+            return None
+
+    def get_character_recipes(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/recipes')
+
+        if response is not None:
+            return api_models.Character_Recipes(response)
+        else:
+            return None
+
+    def get_character_Sab(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/Sab')
+
+        if response is not None:
+            return api_models.Character_Sab(response)
+        else:
+            return None
+
+    def get_character_skills(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/skills')
+
+        if response is not None:
+            return api_models.Character_Skills(response)
+        else:
+            return None
+
+    def get_character_specializations(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/specializations')
+
+        if response is not None:
+            return api_models.Character_Specializations(response)
+        else:
+            return None
+
+    def get_character_training(self, character_name):
+        response = self._get_request('/characters/' + character_name + '/training')
+
+        if response is not None:
+            return api_models.Character_Training(response)
+        else:
+            return None
+
     def get_guild_details(self, guild_ID):
         response = self._get_request('/guild/{0}'.format(guild_ID))
 
