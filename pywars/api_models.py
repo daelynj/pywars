@@ -412,6 +412,36 @@ class Character_Overview:
                                                                                                                         self.skills, self.equipment, self.recipes, self.equipment_pvp, 
                                                                                                                         self.training, self.bags)
 
+class Character_Core:
+    def __init__(self, json):
+        self.name = json['name']
+        self.race = json['race']
+        self.gender = json['gender']
+        self.profession = json['profession']
+        self.level = json['level']
+        self.age = json['age']
+        self.created = json['created']
+        self.deaths = json['deaths']
+
+        if 'guild' in json:
+            self.guild = json['guild']
+        else:
+            self.guild = None
+        if 'title' in json:
+            self.title = json['title']
+        else:
+            self.title = None
+
+    def __str__str(self):
+        pass
+
+class Character_Backstory:
+    def __init__(self, json):
+        pass
+
+    def __str__(self):
+        pass
+
 class Guild:
     def __init__(self, json):
         self.level = json['level']

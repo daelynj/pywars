@@ -43,9 +43,9 @@ def main():
    """for i in range(0, len(daily_achievements)):
       print(str(daily_achievements[i]), "\n")"""
 
-   tmrw_daily_achievements = client.get_tmrw_daily_achievements()
-   for i in range(0, len(tmrw_daily_achievements)):
-      print(str(tmrw_daily_achievements[i]), "\n")
+   #tmrw_daily_achievements = client.get_tmrw_daily_achievements()
+   """for i in range(0, len(tmrw_daily_achievements)):
+      print(str(tmrw_daily_achievements[i]), "\n")"""
    
    #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47"]
    #ids = ["56A82BB9-6B07-4AB0-89EE-E4A6D68F5C47","45410F60-AB66-4146-A0F7-CE99250C4CB0"]
@@ -131,6 +131,9 @@ def main():
 
    #character = client.get_character_overview('Beauty Eh')
    #print(character)
+
+   character_backstory = client.get_character_backstory('Beauty Eh')
+   #print(character_backstory)
    
 if __name__ == "__main__":
     main()
