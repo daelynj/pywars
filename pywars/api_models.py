@@ -444,7 +444,7 @@ class Character_Core:
 
 class Character_Crafting:
     def __init__(self, json):
-        pass
+        self.crafting = json['crafting']
         
     def __str__(self):
         pass

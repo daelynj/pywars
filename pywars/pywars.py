@@ -41,7 +41,7 @@ class Pywars(API.API_Requests):
 
         if response is not None:
             for achievement_type in response:
-                daily_achievements.append(achievement_type + ":")
+                daily_achievements.append(achievement_type + ":")                           #should I be doing this? adding things to the list that aren't part of the response?
                 for achievement in response[achievement_type]:
                     daily_achievements.append(api_models.Daily_Achievements(achievement))
             return daily_achievements
@@ -54,7 +54,7 @@ class Pywars(API.API_Requests):
 
         if response is not None:
             for achievement_type in response:
-                tmrw_daily_achievements.append(achievement_type + ":")
+                tmrw_daily_achievements.append(achievement_type + ":")                      #should I be doing this? adding things to the list that aren't part of the response?
                 for achievement in response[achievement_type]:
                     tmrw_daily_achievements.append(api_models.Tmrw_Daily_Achievements(achievement))
             return tmrw_daily_achievements

@@ -39,9 +39,9 @@ def main():
    """for i in range(0, len(achievements)):
       print(str(achievements[i]), "\n")"""
 
-   #daily_achievements = client.get_daily_achievements()
-   """for i in range(0, len(daily_achievements)):
-      print(str(daily_achievements[i]), "\n")"""
+   daily_achievements = client.get_daily_achievements()
+   for i in range(0, len(daily_achievements)):
+      print(str(daily_achievements[i]), "\n")
 
    #tmrw_daily_achievements = client.get_tmrw_daily_achievements()
    """for i in range(0, len(tmrw_daily_achievements)):
