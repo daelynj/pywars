@@ -448,7 +448,7 @@ class Character_Crafting:
         self.crafting = json['crafting']
         
     def __str__(self):
-        pass
+        return "Crafting: {0}".format(self.crafting)
 
 class Character_Equipment:
     def __init__(self, json):
