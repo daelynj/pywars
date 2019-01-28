@@ -440,7 +440,8 @@ class Character_Core:
             self.title = None
 
     def __str__str(self):
-        pass
+        return "Name: {0}\nRace: {1}\nGender: {2}\nProfession: {3}\nLevel: {4}\nGuild: {5}\nAge: {6}\nCreated: {7}\nDeaths: {8}\nTitle: {9}".format(self.name, self.race, self.gender, self.profession, self.level, 
+                                                                                                                                                    self.guild, self.age, self.created, self.deaths, self.title)
 
 class Character_Crafting:
     def __init__(self, json):
