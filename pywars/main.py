@@ -140,6 +140,15 @@ def main():
 
    #character_crafting = client.get_character_crafting('Alwyn Silverhand')
    #print(character_crafting)
+
+   #character_equipment = client.get_character_equipment('Alwyn Silverhand')
+   #print(character_equipment)
+
+   #character_heropoints = client.get_character_heropoints('Alwyn Silverhand')
+   #print(character_heropoints)
+
+   #character_inventory = client.get_character_inventory('Alwyn Silverhand')
+   #print(character_inventory)
    
 if __name__ == "__main__":
     main()

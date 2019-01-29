@@ -459,17 +459,17 @@ class Character_Equipment:
 
 class Character_Heropoints:
     def __init__(self, json):
-        pass
+        self.heropoints = json
         
     def __str__(self):
-        pass
+        return "Heropoints: {0}".format(self.heropoints)
 
 class Character_Inventory:
     def __init__(self, json):
-        pass
+        self.inventory = json
         
     def __str__(self):
-        pass
+        return "Inventory: {0}".format(self.inventory)
 
 class Character_Recipes:
     def __init__(self, json):
