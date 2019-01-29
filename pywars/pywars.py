@@ -1,5 +1,5 @@
 import api_requests as API
-import api_models
+from api_models import api_models
 import json
 
 #this is the client

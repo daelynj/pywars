@@ -147,7 +147,7 @@ def main():
    #character_heropoints = client.get_character_heropoints('Alwyn Silverhand')
    #print(character_heropoints)
 
-   #character_inventory = client.get_character_inventory('Alwyn Silverhand')
+   character_inventory = client.get_character_inventory('Alwyn Silverhand')
    #print(character_inventory)
    
 if __name__ == "__main__":
