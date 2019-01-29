@@ -445,17 +445,18 @@ class Character_Core:
 
 class Character_Crafting:
     def __init__(self, json):
-        self.crafting = json['crafting']
+        self.crafting = json
         
     def __str__(self):
         return "Crafting: {0}".format(self.crafting)
 
 class Character_Equipment:
     def __init__(self, json):
-        pass
+        self.equipment = json['equipment']
         
     def __str__(self):
-        pass
+        return "Equipment: {0}".format(self.equipment)
+
 class Character_Heropoints:
     def __init__(self, json):
         pass

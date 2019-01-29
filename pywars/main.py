@@ -39,9 +39,9 @@ def main():
    """for i in range(0, len(achievements)):
       print(str(achievements[i]), "\n")"""
 
-   daily_achievements = client.get_daily_achievements()
-   for i in range(0, len(daily_achievements)):
-      print(str(daily_achievements[i]), "\n")
+   #daily_achievements = client.get_daily_achievements()
+   """for i in range(0, len(daily_achievements)):
+      print(str(daily_achievements[i]), "\n")"""
 
    #tmrw_daily_achievements = client.get_tmrw_daily_achievements()
    """for i in range(0, len(tmrw_daily_achievements)):
@@ -134,6 +134,12 @@ def main():
 
    #character_backstory = client.get_character_backstory('Beauty Eh')
    #print(character_backstory)
+
+   #character_core = client.get_character_core('Beauty Eh')
+   #print(character_core)
+
+   #character_crafting = client.get_character_crafting('Alwyn Silverhand')
+   #print(character_crafting)
    
 if __name__ == "__main__":
     main()
