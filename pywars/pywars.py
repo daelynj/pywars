@@ -1,5 +1,5 @@
 import api_requests as API
-from api_models import api_models
+from api_models import achievements, api_models
 import json
 
 #this is the client
@@ -13,7 +13,7 @@ class Pywars(API.API_Requests):
         super().__init__(api_key, GUILDWARS2_URL)
     
     def get_achievements(self, ids=None):
-        achievements = []
+        achievement_list = []
 
         if ids == None:
             response = self._get_request('/achievements')               #if no ID's are provided, a list of all ids is returned
@@ -30,8 +30,8 @@ class Pywars(API.API_Requests):
             if ids == None:
                 return response
             for achievement in response:
-                achievements.append(api_models.Achievements(achievement))
-            return achievements
+                achievement_list.append(achievements.Achievements(achievement))
+            return achievement_list
         else:
             return None
 

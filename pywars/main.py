@@ -20,7 +20,6 @@ def main():
    #print(dungeons_since_reset)
 
    #account_achievements = client.get_account_achievements()
-   #print account_achievements
    """
    for i in range(0, len(account_achievements)):
       print(str(account_achievements[i]), "\n")
