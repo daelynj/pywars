@@ -1,5 +1,5 @@
 import api_requests as API
-from api_models import achievements, api_models
+from api_models import achievements, daily_achievements, api_models
 import json
 
 #this is the client
@@ -36,15 +36,15 @@ class Pywars(API.API_Requests):
             return None
 
     def get_daily_achievements(self):
-        daily_achievements = []
+        daily_achievements_list = []
         response = self._get_request('/achievements/daily')
 
         if response is not None:
             for achievement_type in response:
                 daily_achievements.append(achievement_type + ":")                           #should I be doing this? adding things to the list that aren't part of the response?
                 for achievement in response[achievement_type]:
-                    daily_achievements.append(api_models.Daily_Achievements(achievement))
-            return daily_achievements
+                    daily_achievements_list.append(daily_achievements.Daily_Achievements(achievement))
+            return daily_achievements_list
         else:
             return None
 
