@@ -1,5 +1,6 @@
 import api_requests as API
-from api_models import achievements, daily_achievements, api_models
+from api_models import api_models
+from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements
 import json
 
 #this is the client
@@ -41,7 +42,7 @@ class Pywars(API.API_Requests):
 
         if response is not None:
             for achievement_type in response:
-                daily_achievements.append(achievement_type + ":")                           #should I be doing this? adding things to the list that aren't part of the response?
+                daily_achievements_list.append(achievement_type + ":")                           #should I be doing this? adding things to the list that aren't part of the response?
                 for achievement in response[achievement_type]:
                     daily_achievements_list.append(daily_achievements.Daily_Achievements(achievement))
             return daily_achievements_list
@@ -49,20 +50,20 @@ class Pywars(API.API_Requests):
             return None
 
     def get_tmrw_daily_achievements(self):
-        tmrw_daily_achievements = []
+        tmrw_daily_achievements_list = []
         response = self._get_request('/achievements/daily/tomorrow')
 
         if response is not None:
             for achievement_type in response:
-                tmrw_daily_achievements.append(achievement_type + ":")                      #should I be doing this? adding things to the list that aren't part of the response?
+                tmrw_daily_achievements_list.append(achievement_type + ":")                      #should I be doing this? adding things to the list that aren't part of the response?
                 for achievement in response[achievement_type]:
-                    tmrw_daily_achievements.append(api_models.Tmrw_Daily_Achievements(achievement))
-            return tmrw_daily_achievements
+                    tmrw_daily_achievements_list.append(tmrw_daily_achievements.Tmrw_Daily_Achievements(achievement))
+            return tmrw_daily_achievements_list
         else:
             return None
 
     def get_group_achievements(self, ids=None):
-        group_achievements = []
+        group_achievements_list = []
 
         if ids == None:
             response = self._get_request('/achievements/groups/') 
@@ -81,11 +82,11 @@ class Pywars(API.API_Requests):
             if ids == None:
                 return response
             elif len(ids) == 1:
-                return api_models.Group_Achievements(response)
+                return group_achievements.Group_Achievements(response)
             else:
                 for achievement in response:
-                    group_achievements.append(api_models.Group_Achievements(achievement))
-                return group_achievements
+                    group_achievements_list.append(group_achievements.Group_Achievements(achievement))
+                return group_achievements_list
         else:
             return None
 
