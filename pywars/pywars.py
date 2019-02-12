@@ -1,6 +1,6 @@
 import api_requests as API
 from api_models import api_models
-from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements
+from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements, achievements_categories
 import json
 
 #this is the client
@@ -91,7 +91,7 @@ class Pywars(API.API_Requests):
             return None
 
     def get_achievements_categories(self, ids=None):
-        achievements_categories = []
+        achievements_categories_list = []
 
         if ids == None:
             response = self._get_request('/achievements/categories/') 
@@ -110,11 +110,11 @@ class Pywars(API.API_Requests):
             if ids == None:
                 return response
             elif len(ids) == 1:
-                return api_models.Achievements_Categories(response)
+                return achievements_categories.Achievements_Categories(response)
             else:
                 for achievement in response:
-                    achievements_categories.append(api_models.Achievements_Categories(achievement))
-                return achievements_categories
+                    achievements_categories_list.append(achievements_categories.Achievements_Categories(achievement))
+                return achievements_categories_list
         else:
             return None        
 
