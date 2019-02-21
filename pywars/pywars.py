@@ -1,7 +1,7 @@
 import api_requests as API
 from api_models import api_models
 from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements, achievements_categories
-from api_models.account import account, account_achievements
+from api_models.account import account, account_achievements, bank, dungeons_since_reset
 import json
 
 #this is the client
@@ -147,7 +147,7 @@ class Pywars(API.API_Requests):
                 if item == None:
                     bank_items.append("None")
                 else:
-                    bank_items.append(api_models.Bank(item))
+                    bank_items.append(bank.Bank(item))
             return bank_items
         else:
             return None
@@ -156,7 +156,7 @@ class Pywars(API.API_Requests):
         response = self._get_request('/account/dungeons')
 
         if response is not None:
-            return api_models.Dungeons_Since_Reset(response)
+            return dungeons_since_reset.Dungeons_Since_Reset(response)
         else:
             return None
 
