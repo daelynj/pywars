@@ -1,7 +1,7 @@
 import api_requests as API
 from api_models import api_models
 from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements, achievements_categories
-from api_models.account import account, account_achievements, bank, dungeons_since_reset
+from api_models.account import account, account_achievements, bank, dungeons_since_reset, account_dyes
 import json
 
 #this is the client
@@ -164,7 +164,7 @@ class Pywars(API.API_Requests):
         response = self._get_request('/account/dyes')
 
         if response is not None:
-            return api_models.Account_Dyes(response)
+            return account_dyes.Account_Dyes(response)
         else:
             return None
 
