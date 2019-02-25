@@ -1,12 +1,5 @@
 import json
 
-class Account_Gliders:
-    def __init__(self, json):
-        self.gliders = json
-
-    def __str__(self):
-        return "Gliders:\n{0}".format(self.gliders)
-
 class Account_Cats:
     def __init__(self, json):
         self.id = json['id']
