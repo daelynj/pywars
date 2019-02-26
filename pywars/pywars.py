@@ -1,7 +1,7 @@
 import api_requests as API
 from api_models import api_models
 from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements, achievements_categories
-from api_models.account import account, account_achievements, bank, dungeons_since_reset, account_dyes, account_finishers, account_gliders
+from api_models.account import account, account_achievements, bank, dungeons_since_reset, account_dyes, account_finishers, account_gliders, account_cats
 import json
 
 #this is the client
@@ -188,13 +188,13 @@ class Pywars(API.API_Requests):
             return None
 
     def get_account_cats(self):
-        account_cats = []
+        account_cats_list = []
         response = self._get_request('/account/home/cats')
 
         if response is not None:
             for cat in response:
-                account_cats.append(api_models.Account_Cats(cat))
-            return account_cats
+                account_cats_list.append(account_cats.Account_Cats(cat))
+            return account_cats_list
         else:
             return None
 
