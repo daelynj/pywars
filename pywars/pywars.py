@@ -1,7 +1,7 @@
 import api_requests as API
 from api_models import api_models
 from api_models.achievements import achievements, daily_achievements, tmrw_daily_achievements, group_achievements, achievements_categories
-from api_models.account import account, account_achievements, bank, dungeons_since_reset, account_dyes, account_finishers, account_gliders, account_cats, account_nodes
+from api_models.account import account, account_achievements, bank, dungeons_since_reset, account_dyes, account_finishers, account_gliders, account_cats, account_nodes, account_inventory
 import json
 
 #this is the client
@@ -207,13 +207,13 @@ class Pywars(API.API_Requests):
             return None
 
     def get_account_inventory(self):
-        account_inventory = []
+        account_inventory_list = []
         response = self._get_request('/account/inventory')
 
         if response is not None:
             for item in response:
-                account_inventory.append(api_models.Account_Inventory(item))
-            return account_inventory
+                account_inventory_list.append(account_inventory.Account_Inventory(item))
+            return account_inventory_list
         else:
             return None
 
